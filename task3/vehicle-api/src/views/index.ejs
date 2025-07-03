@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle List</title>
+</head>
+<body>
+  <h1>Vehicle List</h1>
+  <form action="/vehicle" method="POST">
+    <input name="modelName" placeholder="Model Name" required />
+    <input name="vehicleName" placeholder="Vehicle Name" required />
+    <input name="price" placeholder="Price" required />
+    <input name="image" placeholder="Image URL" />
+    <input name="desc" placeholder="Description" />
+    <input name="brand" placeholder="Brand" />
+    <button type="submit">Add Vehicle</button>
+  </form>
+  <ul>
+    <% vehicles.forEach(vehicle => { %>
+      <li>
+        <strong><%= vehicle.vehicleName %></strong> - ₹<%= vehicle.price %> 
+        <br><img src="<%= vehicle.image %>" alt="" width="100"/>
+        <br><%= vehicle.desc %> - <%= vehicle.brand %>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
